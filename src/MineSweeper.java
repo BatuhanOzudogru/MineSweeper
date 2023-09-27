@@ -67,9 +67,9 @@ public class MineSweeper {
         Scanner input=new Scanner(System.in);
         do{
             System.out.println("=========================");
-            System.out.print("Row no : ");
+            System.out.print("Row no "+"(1"+"-"+row+") : ");
             int row=input.nextInt();
-            System.out.print("Column no : ");
+            System.out.print("Column no "+"(1"+"-"+column+") : ");
             int column=input.nextInt();
             select(row,column);
             print(playerBoard);
@@ -88,7 +88,7 @@ public class MineSweeper {
         int a=x-1;
         int b=y-1;
         int count=0;
-        if(a>=row||b>=column){   // Check if the player's selection is outside the coordinate system.
+        if(a>=row||b>=column||a<=-1||b<=-1){   // Check if the player's selection is outside the coordinate system.
             System.out.println("You made a selection outside the coordinate system, try again.");
         }else if(!gameBoard[a][b].equals("-")&&!gameBoard[a][b].equals("*")) { // Check if the player has previously selected this coordinate.
             System.out.println("You have entered this coordinate before. Try again.");
@@ -115,7 +115,7 @@ public class MineSweeper {
                                     }
                                 }
                             }
-                        }else if (a==row-1&&b!=row-1) {
+                        }else if (a==row-1&&b!=column-1) {
                             for(int i=a-1; i<=a;i++){
                                 for(int j=b-1;j<b+2;j++){
                                     if(gameBoard[i][j].equals("*")){
