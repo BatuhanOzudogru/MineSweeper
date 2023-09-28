@@ -150,7 +150,7 @@ public class MineSweeper {
                                 }
                             }
                         }
-                    }else if(a>0){
+                    }else if(a>0&&b==0){
                         if(a==row-1){
                             for(int i=a-1; i<=a;i++){
                                 for(int j=b;j<b+2;j++){

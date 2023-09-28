@@ -9,7 +9,7 @@ public class Main {
         int rowNumber=input.nextInt(); // Request the number of rows from the user.
         System.out.print("Column Number : ");
         int columnNumber=input.nextInt();  // Request the number of columns from the user.
-        if (rowNumber>0&&columnNumber>0){
+        if (rowNumber>1&&columnNumber>1){
             MineSweeper mineSweeper = new MineSweeper(rowNumber,columnNumber); // Create a MineSweeper game instance with the user-defined grid size.
             mineSweeper.run();
         }
